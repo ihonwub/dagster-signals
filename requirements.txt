@@ -1,0 +1,13 @@
+# Pin to the SAME Dagster version the control plane runs (the dagster Helm chart
+# in apps/dagster-instance is 1.11.7), so the gRPC code server and the
+# webserver/daemon speak a compatible protocol.
+#
+#   dagster          -> the library your assets import
+#   dagster-postgres -> run pods write event logs to the instance's Postgres
+#   dagster-k8s      -> Kubernetes run launcher / executor support
+#
+# The 0.29.x library versions correspond to Dagster 1.13.x (the libraries track
+# the core release with a fixed 0.(16+minor) offset).
+dagster==1.13.10
+dagster-postgres==0.29.10
+dagster-k8s==0.29.10
